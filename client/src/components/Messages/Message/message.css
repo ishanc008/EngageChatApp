@@ -1,0 +1,144 @@
+.messageBox {
+  background: #f3f3f3;
+  border-radius: 1rem;
+  padding: 2%;
+  color: white;
+  display: inline-block;
+  /* width: fit-content; */
+  max-width: 50%;
+}
+
+.messageText {
+  width: 100%;
+  letter-spacing: 0;
+  float: left;
+  font-size: 1.1em;
+  word-wrap: break-word;
+}
+
+.messageText img {
+  vertical-align: middle;
+}
+
+.messageContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5%;
+  align-items: center;
+  /* margin-top: 1px; */
+}
+
+.messageContainer-1 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5%;
+  margin-top: 5px;
+}
+
+.strikeThrough {
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+
+.sentText {
+  display: flex;
+  align-items: center;
+  font-family: Helvetica;
+  color: #828282;
+  letter-spacing: 0.3px;
+}
+
+.pl-10 {
+  padding-left: 5.5%;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.colorWhite {
+  color: white;
+}
+
+.colorDark {
+  color: #353535;
+  /* color: red; */
+}
+
+.backgroundBlue {
+  background: #009dae;
+  color: #ffeac9;
+  /* background: #2979ff; */
+  /* background: #2c394b; */
+  /* background: #bfa2db; */
+  /* color: black; */
+}
+
+.backgroundRed {
+  /* background: #ff29a6; */
+  background: #fac;
+  color: black;
+}
+
+.backgroundLight {
+  /* background: #fac; */
+  background: #71dfe7;
+  color: black;
+  /* background: green; */
+  /* background: #2c394b; */
+  /* color: #bfa2db; */
+  /* background: #bfa2db; */
+  /* background: #f3f3f3; */
+}
+
+.ant-modal-header {
+  border-radius: 1em;
+  text-align: center;
+}
+
+.ant-modal-body {
+  padding: 0.5em;
+}
+
+.ant-modal-footer {
+  text-align: center;
+}
+
+.ant-modal-content {
+  /* height: 70vh; */
+  border-radius: 1em;
+  border-top-left-radius: 1em;
+}
+
+.ant-modal-title {
+  font-size: 1.4rem;
+}
+
+.ant-checkbox-disabled + span {
+  color: black;
+}
+
+.ant-btn-primary {
+  background: #7474bf;
+  border-color: #7474bf;
+}
+
+.ant-btn-primary:hover {
+  background: #7474bf;
+}
+
+.ant-menu-inline .ant-menu-item {
+  margin-top: 0;
+}
