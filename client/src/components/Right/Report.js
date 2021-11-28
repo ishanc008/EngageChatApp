@@ -48,7 +48,7 @@ const Report = ({
         />
       </p>
       <div style={{ padding: "1em 2em" }}>
-        <div style={{ alignItems: "center" }}>
+        <div style={{ alignItems: "center", display: "flex", flexDirection: "row" }}>
           {report.reportedBy.length === 1 ? (
             <Avatar src="https://joeschmoe.io/api/v1/random" />
           ) : report.reportedBy.length === 2 ? (

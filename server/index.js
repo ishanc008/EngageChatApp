@@ -36,7 +36,7 @@ io.on("connection", (socket) => {
       id: "####",
     };
     socket.to(room_id).emit("message", msg);
-    io.to(room_id).emit("afterJoin", user);
+    socket.to(room_id).emit("afterJoin", user);
   });
 
   socket.on("sendMessage", async (messageData, callback) => {

@@ -68,7 +68,7 @@ const Message = ({
       let found = false;
       for (let i = 0; i < report.length; i++) {
         if (report[i].reportedMsgId === message.message_id) {
-          for (let j = 0; j < report[i].reportedBy.length; i++) {
+          for (let j = 0; j < report[i].reportedBy.length; j++) {
             if (currUser.id === report[i].reportedBy[j].id) {
               found = true;
               break;

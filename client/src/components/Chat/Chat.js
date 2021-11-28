@@ -163,6 +163,7 @@ const Chat = ({
         });
       } else {
         if (userDetails.type === "remove") {
+          setBannedUsers([...bannedUsers, userDetails.userId]);
           notification.success({
             message: `${userDetails.user_name} removed successfully`,
             // description: "You were removed from roomname!",
