@@ -5,6 +5,7 @@ import signupImage from "../../icons/signup_image.jpeg";
 import catIcon from "../../icons/cat-solid.svg";
 import { signIn, signUp } from "../../actions/users";
 import { useHistory } from "react-router-dom";
+import { Spin } from "antd";
 
 const LoginPage = () => {
   const history = useHistory();
@@ -12,6 +13,7 @@ const LoginPage = () => {
   const [activeForm, setActiveForm] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
+  const [waitCreate, setWaitCreate] = useState(true);
 
   const handleOnChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,6 +21,7 @@ const LoginPage = () => {
 
   const handleOnSignIn = async (e) => {
     console.log("button click");
+    setWaitCreate(false);
     e.preventDefault();
     await signIn(formData)
       .then((userData) => {
@@ -28,8 +31,10 @@ const LoginPage = () => {
           localStorage.setItem("authError", "");
           history.push("/home");
           setFormData({ email: "", password: "" });
+          setWaitCreate(true);
         } else {
           setError(localStorage.getItem("authError"));
+          setWaitCreate(true);
         }
       })
       .catch((error) => {
@@ -38,6 +43,7 @@ const LoginPage = () => {
   };
 
   const handleOnSignUp = async (e) => {
+    setWaitCreate(false);
     console.log("button click");
     e.preventDefault();
     signUp(formData)
@@ -48,8 +54,10 @@ const LoginPage = () => {
           localStorage.setItem("authError", "");
           history.push("/home");
           setFormData({ email: "", password: "" });
+          setWaitCreate(true);
         } else {
           setError(localStorage.getItem("authError"));
+          setWaitCreate(true);
         }
       })
       .catch((error) => {
@@ -69,7 +77,7 @@ const LoginPage = () => {
               <form>
                 <h1>
                   <img src={catIcon} width={24} />
-                  Chat App
+                  Online Forum
                 </h1>
                 <h2>Sign In</h2>
                 <p style={{ color: "red" }}>{error}</p>
@@ -85,12 +93,13 @@ const LoginPage = () => {
                   placeholder="Password"
                   onChange={handleOnChange}
                 />
-                <input
+                {waitCreate ? <input
                   type="submit"
                   name=""
                   value="Login"
                   onClick={handleOnSignIn}
-                />
+                /> :
+                  <Spin />}
                 <p class="signup">
                   Don't have an account ?
                   <a href="#" onClick={() => setActiveForm(!activeForm)}>
@@ -129,12 +138,13 @@ const LoginPage = () => {
                   placeholder="Confirm Password"
                   onChange={handleOnChange}
                 />
-                <input
+                {waitCreate ? <input
                   type="submit"
                   name=""
                   value="Sign Up"
                   onClick={handleOnSignUp}
-                />
+                /> :
+                  <Spin />}
                 <p class="signup">
                   Already have an account ?
                   <a

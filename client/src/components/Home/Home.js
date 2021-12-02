@@ -122,7 +122,7 @@ const Home = () => {
               width={35}
             />
             {/* &nbsp; */}
-            <span> Chat App</span>
+            <span> Online Forum</span>
             {/* </i> */}
             {/* <i className="fas fa-envelope" /> <span> Chat App</span>{" "} */}
           </a>
